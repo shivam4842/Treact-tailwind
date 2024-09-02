@@ -22,6 +22,9 @@ module.exports = {
       borderRadius: {
         '4xl': '40px',
       },
+      zIndex: {
+        '55': '999999',
+      },
     },
   },
   plugins: [],
