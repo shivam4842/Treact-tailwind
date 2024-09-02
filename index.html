@@ -30,7 +30,7 @@
                     </button>
                 </div>
 
-                <ul id="menu" class="transition-transform duration-500 ease-in-out -translate-x-full lg:translate-x-0 animate-slide-in-from-right-to-left lg:animate-none  fixed lg:static top-0 left-5 right-5 bg-white z-50 mt-6 lg:mt-0 border-slate-200 border lg:border-none hidden lg:flex flex-col lg:flex-row items-center space-y-5 lg:space-y-0 p-6 lg:p-0 gap-0 lg:gap-12  text-secondary list-none ml-auto text-lg lg:text-sm font-semibold dark:text-white">
+                <ul id="menu" class="transition-transform duration-500 ease-in-out -translate-x-full lg:translate-x-0 animate-slide-in-from-right-to-left lg:animate-none  fixed lg:static top-0 left-5 right-5 bg-white z-50 mt-6 lg:mt-0 border-slate-200 border lg:border-none hidden lg:flex flex-col lg:flex-row items-center space-y-5 lg:space-y-0 p-6 lg:p-0 gap-0 lg:gap-12  text-secondary list-none ml-auto text-lg lg:text-sm font-semibold dark:text-white dark:bg-slate-950">
                     <li>
                         <a class="tracking-wide hover:text-primary hover:underline hover:decoration-2 underline-offset-8 transition ease-in-out duration-500" href="#">About</a>
                     </li>
@@ -44,14 +44,14 @@
                         <a class="tracking-wide hover:text-primary hover:underline hover:decoration-2 underline-offset-8 transition ease-in-out duration-500" href="#">Contact Us</a>
                     </li>
                     <li class="block lg:hidden">
-                        <a href="#" class="tracking-wide hover:text-primary hover:underline hover:decoration-2 underline-offset-8 transition ease-in-out duration-500">Login</a></li>
+                        <a href="javascript:void(0)" class="tracking-wide hover:text-primary hover:underline hover:decoration-2 underline-offset-8 transition ease-in-out duration-500" id="open-modal1">Login</a></li>
                     <li class="inline-flex lg:hidden">
                         <a href="#" class="tracking-wide py-2.5 px-8 bg-primary hover:bg-primary-focus text-white rounded transition ease-in-out duration-500">Sign Up</a>
                     </li>
                 </ul>
                 <ul class="ml-20 hidden lg:flex items-center gap-6 text-sm font-semibold text-secondary dark:text-white">
                     <li>
-                        <a href="#" class="tracking-wide hover:text-primary hover:underline hover:decoration-2 underline-offset-8 transition ease-in-out duration-500">Login</a>
+                        <a href="javascript:void(0)" class="tracking-wide hover:text-primary hover:underline hover:decoration-2 underline-offset-8 transition ease-in-out duration-500" id="open-modal2">Login</a>
                     </li>
                     <li>
                         <a href="#" class="tracking-wide py-2.5 px-8 bg-primary hover:bg-primary-focus text-white rounded transition ease-in-out duration-500">Sign Up</a>
@@ -110,7 +110,7 @@
                         Checkout our <span class="bg-primary inline-block text-white -skew-x-12 px-4">menu.</span>
                     </h2>
                     <!-- Tabs -->
-                    <ul class="flex justify-between  md:justify-center lg:justify-normal items-center gap-2.5 bg-slate-350 p-2 rounded flex-wrap lg:flex-nowrap">
+                    <ul class="flex flex-col sm:flex-row w-full lg:w-max justify-between md:justify-center lg:justify-normal items-center gap-2.5 bg-slate-350 p-2 rounded">
                         <li>
                             <button id="tab1" class="tab-button py-1.5 px-10 md:px-6 rounded-sm font-medium text-gray-500/90 hover:bg-slate-200 hover:text-slate-600 ease-in-out duration-300 transition">Starters</button>
                         </li>
@@ -127,7 +127,7 @@
                 </div>
                 
                 <!-- Tab Contents -->
-                <div id="content1" class="tab-content mt-4 active">
+                <div id="content1" class="tab-content mt-4 transition ease-in-out delay-150 scale-90 duration-300">
                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-x-6 lg:gap-12 pt-12 lg:pt-16">
                         <div class="bg-slate-350 rounded-b cursor-pointer group">
                             <a href="#"> 
@@ -291,7 +291,7 @@
                         </div>
                    </div>
                 </div>
-                <div id="content2" class="tab-content mt-4 hidden">
+                <div id="content2" class="tab-content mt-4 hidden transition ease-in-out delay-150 scale-90 duration-300">
                     <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-x-6 lg:gap-12 pt-12 lg:pt-16">
                         <div class="bg-slate-350 rounded-b cursor-pointer group">
                             <a href="#">
@@ -455,7 +455,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="content3" class="tab-content mt-4 hidden">
+                <div id="content3" class="tab-content mt-4 hidden transition ease-in-out delay-150 scale-90 duration-300">
                     <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-x-6 lg:gap-12 pt-12 lg:pt-16">
                         <div class="bg-slate-350 rounded-b cursor-pointer group">
                             <a href="#">
@@ -619,7 +619,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="content4" class="tab-content mt-4 hidden">
+                <div id="content4" class="tab-content mt-4 hidden transition ease-in-out delay-150 scale-90 duration-300">
                     <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-x-6 lg:gap-12 pt-12 lg:pt-16">
                         <div class="bg-slate-350 rounded-b cursor-pointer group">
                             <a href="#">
@@ -1006,9 +1006,73 @@
         </footer>
     </main>
 
+    <!-- Modal -->
+    <!-- Modal Background -->
+    <div id="modal" class="fixed z-50 inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+        <!-- Modal Container -->
+        <div class="bg-white rounded-lg shadow-lg w-full max-w-sm mx-4 md:mx-0 relative">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-center">
+                <h3 class="text-2xl font-black flex space-x-3 no-underline items-center text-secondary hover:text-primary px-6 pt-8"> 
+                    <img src="image/logo.svg" alt="" class="w-10">
+                    <span class="tracking-wide">
+                        Treact
+                    </span>
+                </h3>
+            </div>
+            <button id="close-modal" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-gray-700 py-0.5 px-2.5">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <!-- Modal Body -->
+            <div class="px-6 pt-8 pb-8">
+                <form id="login-form">
+                    <div class="mb-6">
+                        <label for="email" class="text-gray-700">Email:</label>
+                        <input type="email" id="email" name="email" class="w-full rounded border-solid py-2 px-4 hover:border-primary-focus placeholder-slate-500 border-slate-200 border-2 outline-none" placeholder="Enter email" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="text-gray-700">Password:</label>
+                        <input type="password" id="password" name="password" class="w-full rounded border-solid py-2 px-4 hover:border-primary-focus placeholder-slate-500 border-slate-200 border-2 outline-none" placeholder="Enter password" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="w-full bg-primary text-white py-2 px-6 rounded-md shadow-sm hover:bg-primary-focus focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Log In</button>
+                    </div>
+                    <p class="pt-8 text-center text-gray-500/90 text-base font-medium">Not Yet Account. <a href="#" class="text-primary hover:underline hover:decoration-2 hover:underline-offset-4
+                        ">Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
  
 //  tabs js
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     const tabs = document.querySelectorAll('.tab-button');
+    //     const contents = document.querySelectorAll('.tab-content');
+
+    //     tabs.forEach((tab, index) => {
+    //         tab.addEventListener('click', function () {
+    //             // Remove active classes from all tabs and hide all content
+    //             tabs.forEach((item) => {
+    //                 item.classList.remove('bg-primary', 'text-white', 'pointer-events-none');
+    //                 item.classList.add('hover:bg-slate-200', 'hover:text-slate-600');
+    //             });
+    //             contents.forEach((item) => item.classList.add('hidden'));
+
+    //             // Add active classes to the clicked tab and show corresponding content
+    //             tab.classList.add('bg-primary', 'text-white', 'pointer-events-none');
+    //             tab.classList.remove('hover:bg-slate-200', 'hover:text-slate-600');
+    //             contents[index].classList.remove('hidden');
+    //         });
+    //     });
+
+    //     // Activate the first tab by default
+    //     tabs[0].classList.add('bg-primary', 'text-white', 'pointer-events-none');
+    //     tabs[0].classList.remove('hover:bg-slate-200', 'hover:text-slate-600');
+    //     contents[0].classList.remove('hidden');
+    // });  
+
     document.addEventListener('DOMContentLoaded', function () {
     const tabs = document.querySelectorAll('.tab-button');
     const contents = document.querySelectorAll('.tab-content');
@@ -1020,21 +1084,34 @@
                 item.classList.remove('bg-primary', 'text-white', 'pointer-events-none');
                 item.classList.add('hover:bg-slate-200', 'hover:text-slate-600');
             });
-            contents.forEach((item) => item.classList.add('hidden'));
+            contents.forEach((item) => {
+                // Reset content to hidden state
+                item.classList.add('opacity-0', 'scale-90', '-translate-y-1', 'hidden');
+                item.classList.remove('opacity-100', 'scale-100', 'translate-y-0', 'active');
+            });
 
             // Add active classes to the clicked tab and show corresponding content
             tab.classList.add('bg-primary', 'text-white', 'pointer-events-none');
             tab.classList.remove('hover:bg-slate-200', 'hover:text-slate-600');
-            contents[index].classList.remove('hidden');
+            const content = contents[index];
+            // Remove hidden class before applying transition classes
+            content.classList.remove('hidden');
+            // Activate content with smooth transition
+            setTimeout(() => {
+                content.classList.remove('opacity-0', 'scale-90', '-translate-y-1');
+                content.classList.add('opacity-100', 'scale-100', 'translate-y-0', 'active');
+            }, 150); // Small delay to allow hidden class to be removed before transition starts
         });
     });
 
     // Activate the first tab by default
     tabs[0].classList.add('bg-primary', 'text-white', 'pointer-events-none');
     tabs[0].classList.remove('hover:bg-slate-200', 'hover:text-slate-600');
-    contents[0].classList.remove('hidden');
+    const defaultContent = contents[0];
+    // Set initial state for first tab content
+    defaultContent.classList.remove('hidden', 'opacity-0', 'scale-90', '-translate-y-1');
+    defaultContent.classList.add('opacity-100', 'scale-100', 'translate-y-0', 'active');
 });
-
 
 // hamburger menu
 document.getElementById('hamburger').addEventListener('click', function () {
@@ -1071,6 +1148,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', checkSlide);
     checkSlide(); // Initial check
+});
+
+
+// modal open-close
+document.getElementById('open-modal1').addEventListener('click', function() {
+    document.getElementById('modal').classList.remove('hidden');
+});
+
+document.getElementById('open-modal2').addEventListener('click', function() {
+    document.getElementById('modal').classList.remove('hidden');
+});
+
+document.getElementById('close-modal').addEventListener('click', function() {
+    document.getElementById('modal').classList.add('hidden');
 });
     </script>
 </body>
