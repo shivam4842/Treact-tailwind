@@ -46,7 +46,7 @@
                     <li class="block lg:hidden">
                         <a href="javascript:void(0)" class="tracking-wide hover:text-primary hover:underline hover:decoration-2 underline-offset-8 transition ease-in-out duration-500" id="open-modal1">Login</a></li>
                     <li class="inline-flex lg:hidden">
-                        <a href="#" class="tracking-wide py-2.5 px-8 bg-primary hover:bg-primary-focus text-white rounded transition ease-in-out duration-500">Sign Up</a>
+                        <a href="javascript:void(0)" class="tracking-wide py-2.5 px-8 bg-primary hover:bg-primary-focus text-white rounded transition ease-in-out duration-500" id="open-modal-register1">Sign Up</a>
                     </li>
                 </ul>
                 <ul class="ml-20 hidden lg:flex items-center gap-6 text-sm font-semibold text-secondary dark:text-white">
@@ -54,7 +54,7 @@
                         <a href="javascript:void(0)" class="tracking-wide hover:text-primary hover:underline hover:decoration-2 underline-offset-8 transition ease-in-out duration-500" id="open-modal2">Login</a>
                     </li>
                     <li>
-                        <a href="#" class="tracking-wide py-2.5 px-8 bg-primary hover:bg-primary-focus text-white rounded transition ease-in-out duration-500">Sign Up</a>
+                        <a href="javascript:void(0)" class="tracking-wide py-2.5 px-8 bg-primary hover:bg-primary-focus text-white rounded transition ease-in-out duration-500" id="open-modal-register2">Sign Up</a>
                     </li>
                 </ul>
             </nav>
@@ -1006,14 +1006,14 @@
         </footer>
     </main>
 
-    <!-- Modal -->
-    <!-- Modal Background -->
-    <div id="modal" class="fixed z-50 inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+
+    <!-- modal login -->
+    <div id="modal" class="fixed z-50 inset-0  bg-gray-800 bg-opacity-50 flex items-center justify-center">
         <!-- Modal Container -->
-        <div class="bg-white rounded-lg shadow-lg w-full max-w-sm mx-4 md:mx-0 relative">
+        <div class="bg-white rounded-lg shadow-lg max-w-sm mx-4 md:mx-0 relative dark:bg-slate-950/85">
             <!-- Modal Header -->
             <div class="flex items-center justify-center">
-                <h3 class="text-2xl font-black flex space-x-3 no-underline items-center text-secondary hover:text-primary px-6 pt-8"> 
+                <h3 class="text-2xl font-black flex space-x-3 no-underline items-center text-secondary hover:text-primary px-6 pt-8 dark:text-white"> 
                     <img src="image/logo.svg" alt="" class="w-10">
                     <span class="tracking-wide">
                         Treact
@@ -1027,18 +1027,69 @@
             <div class="px-6 pt-8 pb-8">
                 <form id="login-form">
                     <div class="mb-6">
-                        <label for="email" class="text-gray-700">Email:</label>
+                        <label for="email" class="text-gray-700 dark:text-white">Email</label>
                         <input type="email" id="email" name="email" class="w-full rounded border-solid py-2 px-4 hover:border-primary-focus placeholder-slate-500 border-slate-200 border-2 outline-none" placeholder="Enter email" required>
                     </div>
                     <div class="mb-6">
-                        <label for="password" class="text-gray-700">Password:</label>
+                        <label for="password" class="text-gray-700 dark:text-white">Password</label>
                         <input type="password" id="password" name="password" class="w-full rounded border-solid py-2 px-4 hover:border-primary-focus placeholder-slate-500 border-slate-200 border-2 outline-none" placeholder="Enter password" required>
+                        <div class="text-end mt-2">
+                            <a href="#" class="text-primary font-medium hover:underline hover:decoration-2 hover:underline-offset-4
+                            text-sm">Forgot Password ?</a>
+                        </div>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="w-full bg-primary text-white py-2 px-6 rounded-md shadow-sm hover:bg-primary-focus focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Log In</button>
                     </div>
-                    <p class="pt-8 text-center text-gray-500/90 text-base font-medium">Not Yet Account. <a href="#" class="text-primary hover:underline hover:decoration-2 hover:underline-offset-4
+                    <p class="pt-8 text-center text-gray-500/90 text-base font-medium dark:text-white">Not Yet Account. <a href="#" class="text-primary hover:underline hover:decoration-2 hover:underline-offset-4
                         ">Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal register -->
+    <div id="modal-register" class="fixed z-50 inset-0  bg-gray-800 bg-opacity-50 flex items-center justify-center">
+        <!-- Modal Container -->
+        <div class="bg-white rounded-lg shadow-lg max-w-sm mx-4 md:mx-0 relative dark:bg-slate-950/85">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-center">
+                <h3 class="text-2xl font-black flex space-x-3 no-underline items-center text-secondary hover:text-primary px-6 pt-8 dark:text-white"> 
+                    <img src="image/logo.svg" alt="" class="w-10">
+                    <span class="tracking-wide">
+                        Treact
+                    </span>
+                </h3>
+            </div>
+            <button id="close-modal-register" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-gray-700 py-0.5 px-2.5">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <!-- Modal Body -->
+            <div class="px-6 pt-8 pb-8">
+                <form id="register-form">
+                    <div class="mb-6">
+                        <label for="first-name" class="text-gray-700 dark:text-white">First Name</label>
+                        <input type="text" id="first-name" name="first-name" class="w-full rounded border-solid py-2 px-4 hover:border-primary-focus placeholder-slate-500 border-slate-200 border-2 outline-none" placeholder="Enter first name" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="last-name" class="text-gray-700 dark:text-white">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" class="w-full rounded border-solid py-2 px-4 hover:border-primary-focus placeholder-slate-500 border-slate-200 border-2 outline-none" placeholder="Enter last name" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="text-gray-700 dark:text-white">Email</label>
+                        <input type="email" id="email" name="email" class="w-full rounded border-solid py-2 px-4 hover:border-primary-focus placeholder-slate-500 border-slate-200 border-2 outline-none" placeholder="Enter email" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="text-gray-700 dark:text-white">Password</label>
+                        <input type="password" id="password" name="password" class="w-full rounded border-solid py-2 px-4 hover:border-primary-focus placeholder-slate-500 border-slate-200 border-2 outline-none" placeholder="Enter password" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="confirm-password" class="text-gray-700 dark:text-white">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" class="w-full rounded border-solid py-2 px-4 hover:border-primary-focus placeholder-slate-500 border-slate-200 border-2 outline-none" placeholder="Enter confirm password" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="w-full bg-primary text-white py-2 px-6 rounded-md shadow-sm hover:bg-primary-focus focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Register</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -1151,18 +1202,111 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// modal open-close
+// Modal open-close functionality
+// const modal = document.getElementById('modal');
+// const hamburgerMenu = document.getElementById('hamburger');
+// const menu = document.getElementById('menu'); // Get menu element here
+
+// document.getElementById('open-modal1').addEventListener('click', function() {
+//     modal.classList.remove('hidden');
+//     if (!menu.classList.contains('hidden')) {
+//         // Close the hamburger menu if it's open
+//         hamburgerMenu.click();
+//     }
+// });
+
+// document.getElementById('open-modal2').addEventListener('click', function() {
+//     modal.classList.remove('hidden');
+//     if (!menu.classList.contains('hidden')) {
+//         // Close the hamburger menu if it's open
+//         hamburgerMenu.click();
+//     }
+// });
+
+// document.getElementById('close-modal').addEventListener('click', function() {
+//     modal.classList.add('hidden');
+// });
+
+// window.onload = function() {
+//     modal.classList.add('hidden');
+// }
+
+
+// Modal open-close functionality
+const modal = document.getElementById('modal');
+const hamburgerMenu = document.getElementById('hamburger');
+const menu = document.getElementById('menu'); // Get menu element here
+
+// Function to disable the hamburger menu
+function disableHamburgerMenu() {
+    hamburgerMenu.classList.add('pointer-events-none', 'opacity-50'); // Add Tailwind classes to visually indicate it's disabled
+}
+
+// Function to enable the hamburger menu
+function enableHamburgerMenu() {
+    hamburgerMenu.classList.remove('pointer-events-none', 'opacity-50'); // Remove Tailwind classes
+}
+
 document.getElementById('open-modal1').addEventListener('click', function() {
-    document.getElementById('modal').classList.remove('hidden');
+    modal.classList.remove('hidden');
+    disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
+    if (!menu.classList.contains('hidden')) {
+        // Close the hamburger menu if it's open
+        hamburgerMenu.click();
+    }
 });
 
 document.getElementById('open-modal2').addEventListener('click', function() {
-    document.getElementById('modal').classList.remove('hidden');
+    modal.classList.remove('hidden');
+    disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
+    if (!menu.classList.contains('hidden')) {
+        // Close the hamburger menu if it's open
+        hamburgerMenu.click();
+    }
 });
 
 document.getElementById('close-modal').addEventListener('click', function() {
-    document.getElementById('modal').classList.add('hidden');
+    modal.classList.add('hidden');
+    enableHamburgerMenu(); // Enable the hamburger menu when the modal closes
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    modal.classList.add('hidden');
+    enableHamburgerMenu(); // Ensure the hamburger menu is enabled on page load
+});
+
+
+// Modal register 
+const modal_register = document.getElementById('modal-register');
+
+document.getElementById('open-modal-register1').addEventListener('click', function() {
+    modal_register.classList.remove('hidden');
+    disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
+    if (!menu.classList.contains('hidden')) {
+        // Close the hamburger menu if it's open
+        hamburgerMenu.click();
+    }
+});
+
+document.getElementById('open-modal-register2').addEventListener('click', function() {
+    modal_register.classList.remove('hidden');
+    disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
+    if (!menu.classList.contains('hidden')) {
+        // Close the hamburger menu if it's open
+        hamburgerMenu.click();
+    }
+});
+
+document.getElementById('close-modal-register').addEventListener('click', function() {
+    modal_register.classList.add('hidden');
+    enableHamburgerMenu(); // Enable the hamburger menu when the modal closes
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    modal_register.classList.add('hidden');
+    enableHamburgerMenu(); // Ensure the hamburger menu is enabled on page load
+});
+
     </script>
 </body>
 </html>
