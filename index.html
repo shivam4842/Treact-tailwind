@@ -93,7 +93,7 @@
                     </div> 
                     <div class="ml-0 md:ml-12 lg:ml-16 text-center md:text-left">
                         <h5 class="text-primary text-sm font-medium tracking-wider dark:text-white">Established Since 2014</h5>
-                        <h2 class="mt-4 font-black text-3xl md:text-4xl lg:text-5xl !leading-snug text-secondary text-balance tracking-wide md:tracking-normal dark:text-white">We've been serving for <span class="bg-primary inline-block text-white -skew-x-12 px-4">over 5 years.</span>
+                        <h2 class="mt-4 font-black !leading-snug text-3xl md:text-4xl lg:text-5xl text-secondary text-balance tracking-wide md:tracking-normal dark:text-white">We've been serving for <span class="bg-primary inline-block text-white -skew-x-12 px-4">over 5 years.</span>
                         </h2>
                         <p class="pt-12 pb-9 text-sm lg:text-lg md:text-base font-medium text-gray-500/80 dark:text-white/50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         <span class="pt-7 flex flex-wrap">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
@@ -1044,28 +1044,6 @@
                     <p class="pt-8 text-center text-gray-500/90 text-base font-medium dark:text-white">Not Yet Account. <a href="javascript:void(0)" id="sign-up-link" class="text-primary hover:underline hover:decoration-2 hover:underline-offset-4
                         ">Sign Up</a></p>
                 </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- modal register -->
-    <div id="modal-register" class="fixed z-50 inset-0  bg-gray-800 bg-opacity-50 flex items-center justify-center">
-        <!-- Modal Container -->
-        <div class="bg-white rounded-lg shadow-lg max-w-sm mx-4 md:mx-0 relative dark:bg-slate-950/85">
-            <!-- Modal Header -->
-            <div class="flex items-center justify-center">
-                <h3 class="text-2xl font-black flex space-x-3 no-underline items-center text-secondary hover:text-primary px-6 pt-8 dark:text-white"> 
-                    <img src="image/logo.svg" alt="" class="w-10">
-                    <span class="tracking-wide">
-                        Treact
-                    </span>
-                </h3>
-            </div>
-            <button id="close-modal-register" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-gray-700 py-0.5 px-2.5">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <!-- Modal Body -->
-            <div class="px-6 pt-8 pb-8">
                 <form id="register-form">
                     <div class="mb-6">
                         <label for="first-name" class="text-gray-700 dark:text-white">First Name</label>
@@ -1234,6 +1212,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Modal open-close functionality
 const modal = document.getElementById('modal');
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
 const hamburgerMenu = document.getElementById('hamburger');
 const menu = document.getElementById('menu'); // Get menu element here
 
@@ -1247,8 +1227,19 @@ function enableHamburgerMenu() {
     hamburgerMenu.classList.remove('pointer-events-none', 'opacity-50'); // Remove Tailwind classes
 }
 
+function showLoginForm() {
+    loginForm.classList.remove('hidden');
+    registerForm.classList.add('hidden');
+}
+
+function showRegisterForm() {
+    registerForm.classList.remove('hidden');
+    loginForm.classList.add('hidden');
+}
+
 document.getElementById('open-modal1').addEventListener('click', function() {
     modal.classList.remove('hidden');
+    showLoginForm(); // Show login form by default
     disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
     if (!menu.classList.contains('hidden')) {
         // Close the hamburger menu if it's open
@@ -1258,6 +1249,27 @@ document.getElementById('open-modal1').addEventListener('click', function() {
 
 document.getElementById('open-modal2').addEventListener('click', function() {
     modal.classList.remove('hidden');
+    showLoginForm(); // Show login form by default
+    disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
+    if (!menu.classList.contains('hidden')) {
+        // Close the hamburger menu if it's open
+        hamburgerMenu.click();
+    }
+});
+
+document.getElementById('open-modal-register1').addEventListener('click', function() {
+    modal.classList.remove('hidden');
+    showRegisterForm(); // Show register form
+    disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
+    if (!menu.classList.contains('hidden')) {
+        // Close the hamburger menu if it's open
+        hamburgerMenu.click();
+    }
+});
+
+document.getElementById('open-modal-register2').addEventListener('click', function() {
+    modal.classList.remove('hidden');
+    showRegisterForm(); // Show register form
     disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
     if (!menu.classList.contains('hidden')) {
         // Close the hamburger menu if it's open
@@ -1275,46 +1287,9 @@ document.addEventListener("DOMContentLoaded", function() {
     enableHamburgerMenu(); // Ensure the hamburger menu is enabled on page load
 });
 
-
-// Modal register 
-const modal_register = document.getElementById('modal-register');
-
-document.getElementById('open-modal-register1').addEventListener('click', function() {
-    modal_register.classList.remove('hidden');
-    disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
-    if (!menu.classList.contains('hidden')) {
-        // Close the hamburger menu if it's open
-        hamburgerMenu.click();
-    }
-});
-
-document.getElementById('open-modal-register2').addEventListener('click', function() {
-    modal_register.classList.remove('hidden');
-    disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
-    if (!menu.classList.contains('hidden')) {
-        // Close the hamburger menu if it's open
-        hamburgerMenu.click();
-    }
-});
-
-document.getElementById('close-modal-register').addEventListener('click', function() {
-    modal_register.classList.add('hidden');
-    enableHamburgerMenu(); // Enable the hamburger menu when the modal closes
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    modal_register.classList.add('hidden');
-    enableHamburgerMenu(); // Ensure the hamburger menu is enabled on page load
-});
-
 document.getElementById('sign-up-link').addEventListener('click', function() {
-    // Open the registration modal
-      modal_register.classList.remove('hidden');
-    disableHamburgerMenu(); // Disable the hamburger menu when the modal opens
-    if (!menu.classList.contains('hidden')) {
-        // Close the hamburger menu if it's open
-        hamburgerMenu.click();
-    }
+    // Open the registration form within the modal
+    showRegisterForm();
 });
 
     </script>
