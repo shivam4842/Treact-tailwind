@@ -72,3 +72,55 @@
 .animate-slide-in-from-left-to-right {
     animation: slide-in-from-left-to-right 1s ease-in-out;
 }
+
+@keyframes slide-background-in {
+    from {
+      transform: translateY(-100%);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-background-out {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slide-content-in {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .slider-background {
+    animation: slide-background-in 1s ease-out forwards;
+  }
+  
+  .slider-background.slide-out {
+    animation: slide-background-out 1s ease-in forwards;
+  }
+  
+  .content-wrapper {
+    opacity: 0;
+    animation: slide-content-in 1s ease-out forwards;
+    animation-delay: 1s; /* Delay the content slider animation to sync with background */
+  }
+  
+  .content-wrapper.show {
+    opacity: 1;
+  }
+  
