@@ -1091,7 +1091,7 @@
 
 
     <!-- modal login -->
-    <div id="modal" class="fixed z-50 inset-0  bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <div id="modal" class="fixed z-50 inset-0  bg-gray-800 bg-opacity-50 hidden items-center justify-center">
         <!-- Modal Container -->
         <div class="bg-white rounded-lg shadow-lg max-w-sm mx-4 md:mx-0 relative dark:bg-slate-950/85">
             <!-- Modal Header -->
@@ -1366,6 +1366,14 @@ document.getElementById('close-modal').addEventListener('click', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+    if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    } else if (modal.classList.contains('flex')) {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+    
     modal.classList.add('hidden');
     enableHamburgerMenu(); // Ensure the hamburger menu is enabled on page load
 });
